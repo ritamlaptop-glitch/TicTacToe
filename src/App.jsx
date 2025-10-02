@@ -33,7 +33,8 @@ export default function Board() {
   }
 
   function resetBoard(){
-    setSquares(squares)
+    setSquares(Array(9).fill(null))
+    setXIsNext(true);
   }
   const winner = calculateWineer(squares);
   let status;
@@ -91,8 +92,8 @@ export default function Board() {
             onSquareClick={() => handleClick(8)}
           />
         </div>
-        <button className=' text-white font-bold'
-          onClick={()=>resetBoard}
+        <button className=' text-white  mt-2 border-2 px-2 rounded-lg hover:font-bold hover:text-colour-red-700 text-red-400 bg-slate-200'
+          onClick={()=>resetBoard()}
         > PlayAgain  </button>
         </div>
       </div>
